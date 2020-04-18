@@ -10,7 +10,17 @@ import * as serviceWorker from './serviceWorker';
 import rootReducer from "./redux/reducers/rootReducer";
 
 
-let store = createStore(rootReducer, compose(applyMiddleware(thunk),window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()))
+let store = createStore(rootReducer,
+    localStorage.getItem('store') ? JSON.parse(localStorage['store']) : {}
+    ,compose(applyMiddleware(thunk),window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()))
+
+store.subscribe(() => {
+    localStorage.setItem('store',JSON.stringify(store.getState()))
+})
+
+
+
+
 
 const app = (
     <Provider store={store}>

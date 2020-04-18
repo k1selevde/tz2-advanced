@@ -1,9 +1,8 @@
+@import "./fonts.css";
+
 .App {
   text-align: center;
 }
-
-
-
 .container {
   max-width: 1000px;
   margin: auto
@@ -18,5 +17,6 @@
 .logo {
   color: blueviolet;
   font-size: 19px;
-  font-weight: 700;
+  font-weight: bold;
+  font-family: BalooPaaji , sans-serif;
 }

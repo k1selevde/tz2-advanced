@@ -10,8 +10,9 @@ function App(props) {
     <div className="container">
         <header className="header">
             <span className="logo">
-                LOGO
+                Almost before we knew it
             </span>
+            <span>LOGOTYPE HERE WATCH</span>
             {props.isAuth && <Navbar />}
         </header>
 
