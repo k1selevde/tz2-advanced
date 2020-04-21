@@ -1,6 +1,5 @@
 import {
     HIDE_ALERT,
-    LOG_IN_END_REQUEST,
     LOG_IN_FAILURE,
     LOG_IN_REQUEST,
     LOG_IN_SUCCESS,
@@ -33,7 +32,7 @@ export default (state = initialState, action) => {
                 isLoading: false
             }
         case LOG_OUT:
-            return {...state, user: {...state.user, isAuth: false}, errorMsg: null}
+            return {...state, user: {...state.user, id: null, isAuth: false}, errorMsg: null}
         case HIDE_ALERT:
             return {...state, errorMsg: null}
         default: return state

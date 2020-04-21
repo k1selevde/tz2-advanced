@@ -5,18 +5,19 @@ import {getProfile} from "../redux/actions/profileActions";
 
 class ProfileContainer extends React.Component {
     componentWillMount() {
-        this.props.getProfile(this.props.userId)
+       this.props.getProfile(this.props.userId)
     }
 
     render() {
-        const {user} = this.props
-        return (user && <Profile user={user}/>)
+        const {user,isFetch} = this.props
+        return (<Profile user={user} isFetch={isFetch}/>)
     }
 }
 
 const mapStateToProps = state => ({
     userId: state.session.user.id,
-    user: state.profile.user
+    user: state.profile.user,
+    isFetch: state.profile.isFetching
 })
 
 const mapDispatchToProps = dispatch => {

@@ -1,4 +1,4 @@
-import {PROFILE_GET_FAILURE, PROFILE_GET_REQUEST, PROFILE_GET_SUCCESS} from "../actions/actionTypes";
+import {PROFILE_CLEAR, PROFILE_GET_FAILURE, PROFILE_GET_REQUEST, PROFILE_GET_SUCCESS} from "../actions/actionTypes";
 
 const initialState = {
     user: null,
@@ -11,9 +11,11 @@ export default (state = initialState, action) => {
         case PROFILE_GET_REQUEST:
             return {...state, isFetching: true}
         case PROFILE_GET_FAILURE:
-            return {...state, errorMsg: action.payload.errorMsg}
+            return {...state,  isFetching: false, errorMsg: action.payload.errorMsg}
         case PROFILE_GET_SUCCESS:
-            return {...state, user: {...action.payload}}
+            return {...state,  isFetching: false, user: {...action.payload}}
+        case PROFILE_CLEAR:
+            return {...state, user: null}
         default: return state
     }
 }

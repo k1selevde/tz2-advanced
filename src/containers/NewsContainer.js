@@ -9,17 +9,14 @@ class NewsContainer extends React.Component {
     }
 
     render() {
-        const {data} = this.props
-        return ( data && <News data={data}/> )
+        const {data, isLoad} = this.props
+        return ( <News data={data} isLoad={isLoad} />)
     }
 }
 
 const mapStateToProps = state => ({
-    data: state.news.data
+    data: state.news.data,
+    isLoad: state.news.isLoading
 })
 
-const mapDispatchToProps = dispatch => ({
-    getNews: () => dispatch(getNews())
-})
-
-export default connect(mapStateToProps,mapDispatchToProps)(NewsContainer);
+export default connect(mapStateToProps,{getNews})(NewsContainer);

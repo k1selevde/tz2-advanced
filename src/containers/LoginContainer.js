@@ -9,7 +9,6 @@ const LoginContainer = ({isAuth, ...rest}) => {
         (isAuth)
             ? <Redirect to="/profile" />
             : <Login {...rest} />
-
     )
 }
 

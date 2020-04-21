@@ -1,5 +1,4 @@
-import {NEWS_GET_FAILURE, NEWS_GET_REQUEST, NEWS_GET_SUCCESS} from "./actionTypes";
-import {API_ROOT} from "../../constants/Default";
+import * as t from './actionTypes';
 import {checkResponse, httpGet} from "../../helpers/network";
 
 
@@ -22,21 +21,26 @@ export function getNews() {
 
 export function getNewsRequest() {
     return {
-        type: NEWS_GET_REQUEST
+        type: t.NEWS_GET_REQUEST
     }
 }
 
 export function getNewsSuccess(data) {
     return {
-        type: NEWS_GET_SUCCESS,
+        type: t.NEWS_GET_SUCCESS,
         payload: {data: data}
     }
 }
 
 export function getNewsFailure(msg) {
     return {
-        type: NEWS_GET_FAILURE,
+        type: t.NEWS_GET_FAILURE,
         payload: {message: msg}
     }
 }
 
+export function newsClear() {
+    return {
+        type: t.NEWS_CLEAR
+    }
+}

@@ -2,6 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {useHistory} from 'react-router-dom'
 import {logOut} from '../../redux/actions/sessionActions'
+import {newsClear} from "../../redux/actions/newsActions"
+import {profileClear} from '../../redux/actions/profileActions'
 import LinkBtn from '../LinkBtn/LinkBtn'
 import './Navbar.scss'
 
@@ -12,6 +14,8 @@ const Navbar = (props) => {
     const logoutHandler = event => {
         event.preventDefault()
         props.logOut();
+        props.profileClear();
+        props.newsClear();
         history.push('/')
     }
 
@@ -28,8 +32,4 @@ const Navbar = (props) => {
     )
 }
 
-const mapDispatchToProps = dispatch => ({
-    logOut: () => dispatch(logOut())
-})
-
-export default connect(null, mapDispatchToProps)(Navbar);
+export default connect(null, {logOut, profileClear, newsClear})(Navbar);

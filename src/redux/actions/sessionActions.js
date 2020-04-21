@@ -1,5 +1,5 @@
 import {checkResponse, postData} from "../../helpers/network";
-import {HIDE_ALERT, LOG_IN_END_REQUEST, LOG_IN_FAILURE, LOG_IN_REQUEST, LOG_IN_SUCCESS, LOG_OUT} from "./actionTypes";
+import * as t from './actionTypes'
 import {API_ROOT, defaultErrorMsg} from "../../constants/Default";
 
 export function logIn(data) {
@@ -18,29 +18,29 @@ export function logIn(data) {
 }
 export function logOut() {
     return {
-        type: LOG_OUT
+        type: t.LOG_OUT
     }
 }
 export function loginRequest() {
     return {
-        type: LOG_IN_REQUEST
+        type: t.LOG_IN_REQUEST
     }
 }
 export function loginSuccess(data) {
     return {
-        type: LOG_IN_SUCCESS,
+        type: t.LOG_IN_SUCCESS,
         payload: {id: data.id}
     }
 }
 export function loginFailure(error) {
     return {
-        type: LOG_IN_FAILURE,
+        type: t.LOG_IN_FAILURE,
         payload: {errorMsg: error}
     }
 }
 
 export function hideAlert() {
     return {
-        type: HIDE_ALERT
+        type: t.HIDE_ALERT
     }
 }

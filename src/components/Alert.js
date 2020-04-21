@@ -1,9 +1,12 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import errors from '../helpers/errorsDictionary'
 
-const Alert  = () => {
+const Alert  = ({error}) => {
     return (
-        <div className="container" style={{height: '50px'}}>
-            <span>Имя пользователя или пароль введены не верно.</span>
+        <div className="container" style={{textAlign: 'center', opacity: '0.8',maxWidth: '200px', height: '50px',background: 'red'}}>
+            <strong>
+                {errors[error]}
+            </strong>
         </div>
     );
 }

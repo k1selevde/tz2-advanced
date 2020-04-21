@@ -1,7 +1,6 @@
 import React from 'react'
 import {testEmail, testPassword} from "../helpers/validateInputs";
 import Alert from "./Alert";
-import {hideAlert} from "../redux/actions/sessionActions";
 
 class Login extends React.Component {
     state = {
@@ -21,22 +20,17 @@ class Login extends React.Component {
     }
 
     submitHandler = e => {
-
         const {email, password} = this.state
-
         e.preventDefault()
         this.props.logIn({
             email,
             password
         })
-
-        console.log('email: ', email, 'password: ', password)
-
-            this.setState(prev => ({
-                    ...prev,
-                    password: ''
-                })
-            )
+        this.setState(prev => ({
+                ...prev,
+                password: ''
+            })
+        )
     }
 
     validate = (email, password) => {
@@ -52,11 +46,12 @@ class Login extends React.Component {
 
     render() {
         const {email, password} = this.state
+        const {error} = this.props
         return (
 
             <div className="container">
                 <h3>Войдите на сервис</h3>
-                {this.props.error && <Alert/>}
+                {this.props.error && <Alert error={error}/>}
                 <form onSubmit={this.submitHandler}>
                     <input
                         placeholder="Введите почту"

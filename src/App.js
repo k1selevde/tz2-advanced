@@ -1,5 +1,4 @@
 import React from 'react';
-import {Switch,Route} from "react-router-dom/";
 import {connect} from "react-redux"
 import {Routes} from './components/Routes'
 import Navbar from './components/Navbar/Navbar'
@@ -10,9 +9,8 @@ function App(props) {
     <div className="container">
         <header className="header">
             <span className="logo">
-                Almost before we knew it
+               LOGO
             </span>
-            <span>LOGOTYPE HERE WATCH</span>
             {props.isAuth && <Navbar />}
         </header>
 
