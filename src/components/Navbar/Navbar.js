@@ -26,6 +26,7 @@ const Navbar = (props) => {
                 <LinkBtn to="/login" label={"Login"}></LinkBtn>
                 <LinkBtn to="/profile" label={"Profile"}></LinkBtn>
                 <LinkBtn to="/news" label={"News"}></LinkBtn>
+                <LinkBtn to="/Articles" label={"Articles"}></LinkBtn>
                 <a href="/" onClick={logoutHandler} className="exitBtn">Выйти</a>
             </div>
         </nav>

@@ -1,0 +1,13 @@
+.icon {
+    width: 20px;
+    height: 20px;
+    background-image: url("../../assets/icons/css_sprites.png");
+    background-size: 30px;
+    cursor: pointer;
+    transition: all 1s ease;
+}
+
+.iconBad {
+    transition: all 1s ease;
+    cursor: default;
+}

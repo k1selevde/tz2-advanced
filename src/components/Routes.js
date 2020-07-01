@@ -5,6 +5,7 @@ import NewsContainer from "../containers/NewsContainer";
 import LoginContainer from "../containers/LoginContainer";
 import ProfileContainer from "../containers/ProfileContainer";
 import NotFound from "./NotFound/NotFound";
+import Articles from "./Articles/Articles";
 
 export const Routes = ({isAuth}) => {
     if (isAuth) {
@@ -14,6 +15,7 @@ export const Routes = ({isAuth}) => {
                 <Route path="/Login" component={LoginContainer} ></Route>
                 <Route path="/News" component={NewsContainer} ></Route>
                 <Route path="/Profile" component={ProfileContainer} ></Route>
+                <Route path="/Articles" component={Articles} ></Route>
                 <Route component={NotFound} />
             </Switch>
         )
